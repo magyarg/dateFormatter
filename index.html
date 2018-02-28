@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DateFormatter examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="moment.js"></script>
+    <script src="dateFormatter.js"></script>
+    <script>
+        // Create object instance
+        let df = new DateFormatter('2017-01-01', 'en');
+        console.log('[Parsed date object]', df);
+
+        // Format date object
+        let formatted = df.format('MMMM Do YYYY');
+        console.log('[Formatted date]', formatted);
+
+        // Get months based on the locale
+        let months = df.months();
+        console.log('[Months as an array of objects]', months);
+
+        // Get one month based on a spec. key
+        let month = df.month(12);
+        console.log('[Month as a string]', month);
+
+        // Get weekdays for the parsed object
+        let weekDays = df.weekDays();
+        console.log('[Weekdays]', weekDays);
+
+        // Adds X type of months|days|seconds|years|minutes|hours
+        let add = df.add(5, 'months');
+        console.log('[Add]', add);
+
+        // Subtracts X type of months|days|seconds|years|minutes|hours
+        let sub = df.sub(1, 'months');
+        console.log('[Sub]', sub);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
